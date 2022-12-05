@@ -12,24 +12,30 @@ function App() {
     // возврат функией jsx разметки то что выглядит как html является jsx разметкой
     return (
         <div>
-            This is App component
+            <AppTitle/>
             <Rating/>
             <Accordion/>
+            <Rating/>
         </div>
     );
 }
 
 export default App;
 
+function AppTitle() {
+    return <>This is App component</>
+}
+
+
 function Rating() {
     return (
-        <div>
+        <>
             <Star/>
             <Star/>
             <Star/>
             <Star/>
             <Star/>
-        </div>
+        </>
     )
 }
 
@@ -42,12 +48,22 @@ function Star() {
 function Accordion() {
     return (
         <div>
-            <h3>Меню</h3>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
+            <AccordionTitle/>
+            <AccordionBody/>
         </div>
+    )
+}
+
+function AccordionTitle() {
+    return <h3>Меню</h3>
+}
+
+function AccordionBody() {
+    return (
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
     )
 }

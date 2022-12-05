@@ -81,4 +81,4 @@ let users = [
     },
 ]
 
-console.log(users[0].address.country) // Belarus
+// console.log(users[0].address.country) // Belarus
