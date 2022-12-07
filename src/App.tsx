@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import Accordion from "./components/accordion/Accordion";
+import {Rating} from "./components/Rating/Rating";
 
 /*
 function expression
@@ -12,58 +14,28 @@ function App() {
     // возврат функией jsx разметки то что выглядит как html является jsx разметкой
     return (
         <div>
-            <AppTitle/>
-            <Rating/>
-            <Accordion/>
-            <Rating/>
+            <PageTitle title={'This is App component'}/>
+            <PageTitle title={'My friends'}/>
+            Article 1
+            <Accordion title={'HeaderForAccordion_1'}/>
+            <Accordion title={'HeaderForAccordion_2'}/>
+            Article 2
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
         </div>
     );
 }
 
 export default App;
 
-function AppTitle() {
-    return <>This is App component</>
+function PageTitle(props: any) {
+    return <h1>{props.title}</h1>
 }
 
 
-function Rating() {
-    return (
-        <>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-        </>
-    )
-}
 
-function Star() {
-    return (
-        <div>*</div>
-    )
-}
 
-function Accordion() {
-    return (
-        <div>
-            <AccordionTitle/>
-            <AccordionBody/>
-        </div>
-    )
-}
-
-function AccordionTitle() {
-    return <h3>Меню</h3>
-}
-
-function AccordionBody() {
-    return (
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-    )
-}
