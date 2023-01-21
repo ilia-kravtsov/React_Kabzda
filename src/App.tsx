@@ -1,7 +1,13 @@
-import React from 'react';
-import './App.css';
+import React, {useState} from 'react';
+import './App.module.css';
 import Accordion from "./components/accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
+import On from "./components/OnOff/On";
+import style from './App.module.css'
+import OFF from "./components/OnOff/OFF";
+import Lamp from "./components/OnOff/Lamp";
+import OnOff from "./components/OnOff/OnOff";
+
 
 /*
 function expression
@@ -10,8 +16,13 @@ let someFunc = function(){}
 // function declaration
 // arrow function
 function App() {
-    // действия функции
-    // возврат функией jsx разметки то что выглядит как html является jsx разметкой
+
+    let [values, setValues] = useState(false)
+
+    const changeValues = () => {
+        setValues(prevState => !prevState)
+    }
+
     return (
         <div>
             <PageTitle title={'This is App component'}/>
@@ -26,6 +37,8 @@ function App() {
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>
+            <h1>Homework from Dmitriy</h1>
+            <OnOff changeValues={changeValues} value={values}/>
         </div>
     );
 }
@@ -40,6 +53,31 @@ function PageTitle(props: PageTitlePropsType) {
     return <h1>{props.title}</h1>
 }
 
+/*
+    if(props.collapsed) {
+        return (
+            <div>
+                <AccordionTitle title={props.title}/>
+            </div>
+        )
+    }
+    else {
+        return (
+            <div>
+                <AccordionTitle title={props.title}/>
+                <AccordionBody title={props.title}/>
+            </div>
+        )
+    }
 
+    Можно переписать на
+
+    return (
+            <div>
+                <AccordionTitle title={props.title}/>
+                { !props.collapsed && <AccordionBody title={props.title}/>}
+            </div>
+        )
+*/
 
 

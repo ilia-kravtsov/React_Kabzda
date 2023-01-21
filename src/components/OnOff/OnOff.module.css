@@ -1,0 +1,27 @@
+.green {
+    background-color: green;
+    border: 1px solid lightgray;
+    color: whitesmoke;
+}
+
+.red {
+    background-color: red;
+    border: 2px solid lightgray;
+    color: whitesmoke;
+}
+
+.lamp {
+    border: 2px solid lightgray;
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+}
+
+.lampPosition {
+    margin-left: 93px;
+    margin-top: -25px;
+}
+
+button {
+    margin: 3px;
+}
