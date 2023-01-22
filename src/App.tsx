@@ -7,6 +7,9 @@ import style from './App.module.css'
 import OFF from "./components/OnOff/OFF";
 import Lamp from "./components/OnOff/Lamp";
 import OnOff from "./components/OnOff/OnOff";
+import OnOffDV from "./components/OnOffDimVersion/OnOffDV";
+import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./UncontrolledRating/UncontrolledRating";
 
 
 /*
@@ -16,6 +19,7 @@ let someFunc = function(){}
 // function declaration
 // arrow function
 function App() {
+    console.log('app')
 
     let [values, setValues] = useState(false)
 
@@ -39,6 +43,10 @@ function App() {
             <Rating value={5}/>
             <h1>Homework from Dmitriy</h1>
             <OnOff changeValues={changeValues} value={values}/>
+            <OnOffDV/>
+            <h2>Homework from Dmitriy</h2>
+            <UncontrolledAccordion title={'HeaderForAccordion_1'}/>
+            <UncontrolledRating/>
         </div>
     );
 }
@@ -78,6 +86,13 @@ function PageTitle(props: PageTitlePropsType) {
                 { !props.collapsed && <AccordionBody title={props.title}/>}
             </div>
         )
+
+Локальный стейт компоненты
+Компонента может возвращать jsx разметку которую в нее передают не только на основе
+props который в нее приходят но еще и на основе своего локального состояния
+
+    const on = false - локальный стейт
+    Если будет менять значение переменной то перерисовки не произойдет
 */
 
 
