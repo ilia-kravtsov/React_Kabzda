@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import './App.module.css';
+import style from './App.module.css';
 import Accordion from "./components/accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
 import On from "./components/OnOff/On";
-import style from './App.module.css'
 import OFF from "./components/OnOff/OFF";
 import Lamp from "./components/OnOff/Lamp";
 import OnOff from "./components/OnOff/OnOff";
@@ -28,7 +27,7 @@ function App() {
     }
 
     return (
-        <div>
+        <div className={style.App}>
             <PageTitle title={'This is App component'}/>
             <PageTitle title={'My friends'}/>
             Article 1

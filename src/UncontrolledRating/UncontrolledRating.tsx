@@ -6,38 +6,15 @@ type RatingPropsType = {
 
 export function UncontrolledRating(props: RatingPropsType) {
 
-    let [value_1, setValue_1] = useState(false)
-    const changeStar_1 = () => {
-        setValue_1(!value_1)
-    }
-
-    let [value_2, setValue_2] = useState(false)
-    const changeStar_2 = () => {
-        setValue_2(!value_2)
-    }
-
-    let [value_3, setValue_3] = useState(false)
-    const changeStar_3 = () => {
-        setValue_3(!value_3)
-    }
-
-    let [value_4, setValue_4] = useState(false)
-    const changeStar_4 = () => {
-        setValue_4(!value_4)
-    }
-
-    let [value_5, setValue_5] = useState(false)
-    const changeStar_5 = () => {
-        setValue_5(!value_5)
-    }
+    let [value, setValue] = useState(0)
 
     return (
         <div>
-            <Star value={value_1}/><button onClick={changeStar_1}>1</button>
-            <Star value={value_2}/><button onClick={changeStar_2}>2</button>
-            <Star value={value_3}/><button onClick={changeStar_3}>3</button>
-            <Star value={value_4}/><button onClick={changeStar_4}>4</button>
-            <Star value={value_5}/><button onClick={changeStar_5}>5</button>
+            <Star value={value > 0}/><button onClick={() => setValue(1)}>1</button>
+            <Star value={value > 1}/><button onClick={() => setValue(2)}>2</button>
+            <Star value={value > 2}/><button onClick={() => setValue(3)}>3</button>
+            <Star value={value > 3}/><button onClick={() => setValue(4)}>4</button>
+            <Star value={value > 4}/><button onClick={() => setValue(5)}>5</button>
         </div>
     )
 
@@ -49,19 +26,5 @@ type StarPropsType = {
 }
 
 function Star(props: StarPropsType) {
-
-
-    if(props.value) {
-        return (
-            <span><b>star</b></span>
-
-        )
-    }
-
-    else {
-        return (
-            <span>star</span>
-        )
-    }
-
+    return props.value ? <span><b>star</b></span> : <span>star</span>;
 }
