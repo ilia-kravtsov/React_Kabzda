@@ -10,12 +10,10 @@ type OnOffType = {
 const On = (props: OnOffType) => {
 
     const onClickHandlerTrue = () => {
-        console.log('you pushed on, when props -  true')
         props.changeValues()
     }
 
     const onClickHandlerFalse = () => {
-        console.log('you pushed on, when props -  false')
         props.changeValues()
     }
 

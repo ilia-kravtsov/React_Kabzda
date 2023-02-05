@@ -1,26 +1,21 @@
 import React, {useState} from 'react';
 import style from './App.module.css';
 import Accordion from "./components/accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import {Rating, RatingPropsType, RatingValueType} from "./components/Rating/Rating";
 import On from "./components/OnOff/On";
 import OFF from "./components/OnOff/OFF";
 import Lamp from "./components/OnOff/Lamp";
 import OnOff from "./components/OnOff/OnOff";
-import OnOffDV from "./components/OnOffDimVersion/OnOffDV";
+import UncontrolledOnOffDV from "./components/OnOffDimVersion/UncontrolledOnOffDV";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./UncontrolledRating/UncontrolledRating";
+import OnOffDVTwo from "./components/OnOffDimVersion/UncontrolledOnOffDV_callback_2";
 
-
-/*
-function expression
-let someFunc = function(){}
-*/
-// function declaration
-// arrow function
 function App() {
-    console.log('app')
 
-    let [values, setValues] = useState(false)
+    let [values, setValues] = useState<boolean>(false)
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
 
     const changeValues = () => {
         setValues(prevState => !prevState)
@@ -31,21 +26,24 @@ function App() {
             <PageTitle title={'This is App component'}/>
             <PageTitle title={'My friends'}/>
             Article 1
-            <Accordion title={'HeaderForAccordion_1'} collapsed={true}/>
-            <Accordion title={'HeaderForAccordion_2'} collapsed={false}/>
+            {/*<Accordion title={'HeaderForAccordion_1'} collapsed={true}/>*/}
+            {/*<Accordion title={'HeaderForAccordion_2'} collapsed={false}/>*/}
             Article 2
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
             <h1>Homework from Dmitriy</h1>
             <OnOff changeValues={changeValues} value={values}/>
-            <OnOffDV/>
+            {/* <UncontrolledOnOffDV/>*/}
             <h2>Homework from Dmitriy</h2>
-            <UncontrolledAccordion title={'HeaderForAccordion_1'}/>
+            {/*<UncontrolledAccordion title={'HeaderForAccordion_1'}/>*/}
             <UncontrolledRating/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <Accordion title={'HeaderForAccordion_2'}
+                       collapsed={accordionCollapsed} onClick={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
+            <OnOff changeValues={changeValues} value={values}/>
+            {/* <UncontrolledOnOffDV/>*/}
+            <OnOffDVTwo on={values} onClick={setValues}/>
+            <UncontrolledOnOffDV onChange={setValues}/> {values.toString()}
+            <UncontrolledAccordion title={'HeaderForAccordion_1'}/>
         </div>
     );
 }

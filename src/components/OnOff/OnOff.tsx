@@ -13,7 +13,7 @@ const OnOff = (props: OnOffType) => {
 
     return (
         <span>
-            <On name='ON' value={props.value} changeValues={props.changeValues}/>
+            < On name='ON' value={props.value} changeValues={props.changeValues}/>
             <OFF name='OFF' value={props.value} changeValues={props.changeValues}/>
             <Lamp value={props.value}/>
         </span>

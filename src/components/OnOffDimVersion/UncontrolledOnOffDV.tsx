@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 
 type OnOffDVType = {
-
+    onChange: (on: boolean) => void
 }
 
-const OnOffDV = (props: OnOffDVType) => {
+const UncontrolledOnOffDV = (props: OnOffDVType) => {
 
     let [on, setOn] = useState(false)
-    console.log('OnOff')
-    console.log('on: '+ on)
 
     const onStyle = {
         width: '30px',
@@ -40,16 +38,27 @@ const OnOffDV = (props: OnOffDVType) => {
         backgroundColor: on ? 'green' : 'red'
     }
 
+    const onClicked = () => {
+        setOn(true)
+        props.onChange(true)
+    }
+
+    const offClicked = () => {
+        setOn(false)
+        props.onChange(false)
+    }
+
+
     return (
         <div>
-            <div style={onStyle} onClick={() => {setOn(true)}}>On</div>
-            <div style={offStyle} onClick={() => {setOn(false)}}>Off</div>
+            <div style={onStyle} onClick={onClicked}>On</div>
+            <div style={offStyle} onClick={offClicked}>Off</div>
             <div style={indicatorStyle}></div>
         </div>
     );
 };
 
-export default OnOffDV;
+export default UncontrolledOnOffDV;
 
 /*  OnOffDV
     Создал компоненту, объявил тиипизацию
