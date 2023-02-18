@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import style from './App.module.css';
-import Accordion from "./components/accordion/Accordion";
+import {Accordion} from "./components/accordion/Accordion";
 import {Rating, RatingPropsType, RatingValueType} from "./components/Rating/Rating";
 import On from "./components/OnOff/On";
 import OFF from "./components/OnOff/OFF";
 import Lamp from "./components/OnOff/Lamp";
-import OnOff from "./components/OnOff/OnOff";
-import UncontrolledOnOffDV from "./components/OnOffDimVersion/UncontrolledOnOffDV";
+import {OnOff} from "./components/OnOff/OnOff";
+import {UncontrolledOnOffDV} from "./components/OnOffDimVersion/UncontrolledOnOffDV";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./UncontrolledRating/UncontrolledRating";
 import OnOffDVTwo from "./components/OnOffDimVersion/UncontrolledOnOffDV_callback_2";

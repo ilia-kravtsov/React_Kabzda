@@ -7,7 +7,7 @@ type AccordionPropsType = {
     onClick: () => void
 }
 
-function Accordion(props: AccordionPropsType) {
+export function Accordion(props: AccordionPropsType) {
 
         return (
             <div>
@@ -19,7 +19,7 @@ function Accordion(props: AccordionPropsType) {
         )
 
 }
-export default Accordion
+
 
 type AccordionTitlePropsType = {
     title: string;

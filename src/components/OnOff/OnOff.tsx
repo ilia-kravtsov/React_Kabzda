@@ -9,15 +9,14 @@ type OnOffType = {
     changeValues: () => void
 }
 
-const OnOff = (props: OnOffType) => {
+export const OnOff = (props: OnOffType) => {
 
     return (
         <span>
-            < On name='ON' value={props.value} changeValues={props.changeValues}/>
+            <On name='ON' value={props.value} changeValues={props.changeValues}/>
             <OFF name='OFF' value={props.value} changeValues={props.changeValues}/>
             <Lamp value={props.value}/>
         </span>
     );
 };
 
-export default OnOff;

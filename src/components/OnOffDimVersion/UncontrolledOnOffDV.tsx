@@ -2,11 +2,13 @@ import React, {useState} from 'react';
 
 type OnOffDVType = {
     onChange: (on: boolean) => void
+    defaultOn?: boolean
+    defaultOff?: boolean
 }
 
-const UncontrolledOnOffDV = (props: OnOffDVType) => {
+export const UncontrolledOnOffDV = (props: OnOffDVType) => {
 
-    let [on, setOn] = useState(false)
+    let [on, setOn] = useState(props.defaultOn? props.defaultOn : false)
 
     const onStyle = {
         width: '30px',
@@ -58,7 +60,7 @@ const UncontrolledOnOffDV = (props: OnOffDVType) => {
     );
 };
 
-export default UncontrolledOnOffDV;
+
 
 /*  OnOffDV
     Создал компоненту, объявил тиипизацию
