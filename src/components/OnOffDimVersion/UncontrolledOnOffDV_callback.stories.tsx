@@ -3,7 +3,7 @@ import {action} from '@storybook/addon-actions';
 import UncontrolledOnOffDV_callback_2 from './UncontrolledOnOffDV_callback_2';
 
 export default  {
-    title: 'UncontrolledOnOffDV_callback_2',
+    title: 'Uncontrolled/OnOffDV_callback_2',
     component: UncontrolledOnOffDV_callback_2
 };
 

@@ -3,7 +3,7 @@ import UncontrolledAccordion from './UncontrolledAccordion';
 import {useState} from "react";
 
 export default  {
-    title: 'UncontrolledAccordion',
+    title: 'Uncontrolled/Accordion',
     component: UncontrolledAccordion
 };
 

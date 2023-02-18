@@ -1,19 +1,28 @@
 import React from "react";
 import {RatingValueType} from "../Rating/Rating";
 
-type AccordionPropsType = {
+export type AccordionPropsType = {
     title: string;
     collapsed: boolean;
+    /**
+     *     Elements which are showed when accordion is not collapsed [Markdown](https:google.com)
+     */
     onClick: () => void
+    /**
+     * Color of header text
+     */
+    color?: string
 }
 
 export function Accordion(props: AccordionPropsType) {
-
+    /**
+     * this title shows us this title
+     */
         return (
             <div>
                 <AccordionTitle
                     title={props.title}
-                    onClick={props.onClick} collapsed={props.collapsed}/>
+                    onClick={props.onClick} collapsed={props.collapsed} color={props.color}/>
                 {props.collapsed && <AccordionBody title={props.title}/>}
             </div>
         )
@@ -25,11 +34,12 @@ type AccordionTitlePropsType = {
     title: string;
     onClick: () => void
     collapsed: boolean
+    color?: string
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
 
-    return <h3 onClick={props.onClick}>{props.title}</h3>
+    return <h3 onClick={props.onClick} style={{color: props.color ? props.color : 'black'}}>{props.title}</h3>
 }
 
 function AccordionBody(props: any) {

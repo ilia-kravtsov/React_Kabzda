@@ -3,7 +3,7 @@ import {action} from '@storybook/addon-actions';
 import {UncontrolledOnOffDV} from './UncontrolledOnOffDV';
 
 export default  {
-    title: 'UncontrolledOnOffDV',
+    title: 'Uncontrolled/OnOffDV',
     component: UncontrolledOnOffDV
 };
 
