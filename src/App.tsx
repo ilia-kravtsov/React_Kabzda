@@ -35,7 +35,7 @@ function App() {
             {/* <UncontrolledOnOffDV/>*/}
             <h2>Homework from Dmitriy</h2>
             {/*<UncontrolledAccordion title={'HeaderForAccordion_1'}/>*/}
-            <UncontrolledRating/>
+            <UncontrolledRating onChange={() => {}} defaultValue={0}/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <Accordion title={'HeaderForAccordion_2'}
                        collapsed={accordionCollapsed} onClick={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
