@@ -10,7 +10,7 @@ type OnOffType = {
 }
 
 export const OnOff = (props: OnOffType) => {
-
+    console.log('OnOff')
     return (
         <span>
             <On name='ON' value={props.value} changeValues={props.changeValues}/>
