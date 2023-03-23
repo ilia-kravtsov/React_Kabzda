@@ -33,8 +33,6 @@ export const Example_1 = () => {
 
     users.push('Sveta ' + new Date().getFullYear())
 
-
-
     return <>
         <button onClick={onClickHandler}>+</button>
         <button onClick={AddUser}>add user</button>
